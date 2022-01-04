@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:library_app/model/books_data.model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BookCardListView extends StatelessWidget {
   const BookCardListView(
@@ -56,7 +57,9 @@ class BookCardListView extends StatelessWidget {
               ),
               MaterialButton(
                 color: Colors.blueGrey,
-                onPressed: () {},
+                onPressed: () {
+                  launch(booksData.books[index].url);
+                },
                 child: const Text(
                   "buy",
                   style: TextStyle(
